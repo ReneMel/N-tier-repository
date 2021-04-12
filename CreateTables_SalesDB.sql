@@ -77,7 +77,7 @@ CREATE TABLE entries(
 	FOREIGN KEY (id_user) REFERENCES users(id)
 );
 
---Entries detail table
+--Detalle de entradas
 CREATE TABLE entries_detail(
 	id int primary key identity,
 	id_entries int NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE entries_detail(
 	FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE
 );
 
---Sale table
+--Ventas
 CREATE TABLE sale(
 	id int primary key identity,
 	id_client int NOT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE sale(
 	FOREIGN KEY (id_user) REFERENCES users(id)
 );
 
---Sale detail table
+--Detalles ventas
 CREATE TABLE sale_detail(
 	id int primary key identity,
 	id_sale int NOT NULL,
