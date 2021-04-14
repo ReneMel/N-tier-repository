@@ -1,0 +1,6 @@
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Entidades\bin\Debug\Program.Entidades.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Entidades\bin\Debug\Program.Entidades.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Entidades\obj\Debug\Program.Entidades.csprojAssemblyReference.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Entidades\obj\Debug\Program.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Entidades\obj\Debug\Program.Entidades.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Entidades\obj\Debug\Program.Entidades.pdb

@@ -1,0 +1,12 @@
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\bin\Debug\Program.Negocio.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\bin\Debug\Program.Negocio.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\bin\Debug\Program.Data.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\bin\Debug\Program.Entidades.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\bin\Debug\Program.Data.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\bin\Debug\Program.Data.dll.config
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\bin\Debug\Program.Entidades.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\obj\Debug\Program.Negocio.csprojAssemblyReference.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\obj\Debug\Program.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\obj\Debug\Program.Negocio.csproj.CopyComplete
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\obj\Debug\Program.Negocio.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Negocio\obj\Debug\Program.Negocio.pdb

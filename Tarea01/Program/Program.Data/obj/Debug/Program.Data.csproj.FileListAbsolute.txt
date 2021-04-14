@@ -1,0 +1,10 @@
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\bin\Debug\Program.Data.dll.config
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\bin\Debug\Program.Data.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\bin\Debug\Program.Data.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\bin\Debug\Program.Entidades.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\bin\Debug\Program.Entidades.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\obj\Debug\Program.Data.csprojAssemblyReference.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\obj\Debug\Program.Data.csproj.CoreCompileInputs.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\obj\Debug\Program.Data.csproj.CopyComplete
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\obj\Debug\Program.Data.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Data\obj\Debug\Program.Data.pdb

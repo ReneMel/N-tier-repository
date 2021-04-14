@@ -1,0 +1,12 @@
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Program.Presentacion.exe.config
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Program.Presentacion.exe
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Program.Presentacion.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Program.Negocio.dll
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Program.Negocio.pdb
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.csprojAssemblyReference.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.Properties.Resources.resources
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.csproj.GenerateResource.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.csproj.CopyComplete
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.exe
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.pdb
