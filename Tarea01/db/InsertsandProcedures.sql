@@ -19,7 +19,7 @@ on r.idrol=p.idrol;
 go; 
 
 
-create or alter proc insert_person 
+create or alter proc insertar_persona 
 @nombre varchar(50), @apellido varchar(50), @edad int, @tel varchar(50)
 as
 insert into persona(nombre,apellido,edad,telefono,idrol) values(@nombre,@apellido, @edad,@tel,2); 
