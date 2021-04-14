@@ -31,16 +31,63 @@ namespace Program.Data
                 throw;
             }
             finally {
-                if (con.State == ConnectionState.Open) {
+                if (con.State == ConnectionState.Open)
                     con.Close();
-                }
-            
+
             }
 
         }
 
-        public String Insertar(Persona Obj) { 
+        public String Insertar(Persona Obj) {
+            string res = "";
+            SqlConnection con = new SqlConnection();
 
+            SqlParameter[] parameters= { 
+                new SqlParameter(){ 
+                    ParameterName= "@nombre",
+                    Value = Obj.nombre,
+                    SqlDbType= SqlDbType.VarChar
+                },
+                new SqlParameter(){
+                    ParameterName= "@apellido",
+                    Value = Obj.apellido,
+                    SqlDbType= SqlDbType.VarChar
+                },
+                new SqlParameter(){
+                    ParameterName= "@edad",
+                    Value = Obj.edad,
+                    SqlDbType= SqlDbType.Int
+                },
+                new SqlParameter(){
+                    ParameterName= "@tel",
+                    Value = Obj.tel,
+                    SqlDbType= SqlDbType.VarChar
+                },
+            };
+
+            try
+            {
+                con = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("insertar_persona", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(parameters);
+                con.Open();
+
+                if (cmd.ExecuteNonQuery() == 1)
+                    res = "Usuario Insertado";
+                else
+                    res = "Usuario no Insertado";
+
+            }
+            catch (Exception e)
+            {
+                res = e.Message;
+            }
+            finally {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return res;
         }
     }
 }
