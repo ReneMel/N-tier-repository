@@ -16,3 +16,4 @@ C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presen
 C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Program.Data.dll.config
 C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Program.Entidades.pdb
 C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\obj\Debug\Program.Presentacion.Form1.resources
+C:\Users\René\Documents\GitHub\N-tier-repository\Tarea01\Program\Program.Presentacion\bin\Debug\Tulpep.NotificationWindow.dll

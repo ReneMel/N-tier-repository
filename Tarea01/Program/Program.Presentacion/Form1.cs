@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Program.Negocio;
+using Tulpep.NotificationWindow;
 
 namespace Program.Presentacion
 {
@@ -24,9 +25,8 @@ namespace Program.Presentacion
             Npersona np = new Npersona();
 
             bs.DataSource = np.Listar();
+            UserDataView.ReadOnly = true;
             UserDataView.DataSource = bs;
-
-            
         }
 
 
@@ -51,8 +51,29 @@ namespace Program.Presentacion
 
             Npersona np = new Negocio.Npersona();
 
-            np.insertarData(NombreBox.Text, ApellidoBox.Text, Convert.ToInt32(EdadBox.Text), TelBox.Text);
+            string res =np.insertarData(NombreBox.Text, ApellidoBox.Text, Convert.ToInt32(EdadBox.Text), TelBox.Text);
             refreshdata();
+
+            PopupNotifier popup = new PopupNotifier();
+            popup.TitleText = "Exito";
+
+            if (res == "Insertado con Exito")
+            {
+                popup.TitleText = "Exito";
+                popup.ContentText = res;
+                popup.Popup();
+            }
+            else {
+                popup.TitleText = "Error";
+                popup.ContentText = res;
+                popup.Popup();
+            }
+            
+         
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }

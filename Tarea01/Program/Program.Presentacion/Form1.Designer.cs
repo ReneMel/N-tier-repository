@@ -39,12 +39,13 @@ namespace Program.Presentacion
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.UserDataView = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UserDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // Insert
             // 
-            this.Insert.Location = new System.Drawing.Point(666, 135);
+            this.Insert.Location = new System.Drawing.Point(651, 136);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(75, 23);
             this.Insert.TabIndex = 0;
@@ -56,28 +57,28 @@ namespace Program.Presentacion
             // 
             this.NombreBox.Location = new System.Drawing.Point(128, 40);
             this.NombreBox.Name = "NombreBox";
-            this.NombreBox.Size = new System.Drawing.Size(240, 20);
+            this.NombreBox.Size = new System.Drawing.Size(223, 20);
             this.NombreBox.TabIndex = 1;
             // 
             // ApellidoBox
             // 
             this.ApellidoBox.Location = new System.Drawing.Point(128, 89);
             this.ApellidoBox.Name = "ApellidoBox";
-            this.ApellidoBox.Size = new System.Drawing.Size(240, 20);
+            this.ApellidoBox.Size = new System.Drawing.Size(223, 20);
             this.ApellidoBox.TabIndex = 2;
             // 
             // EdadBox
             // 
             this.EdadBox.Location = new System.Drawing.Point(491, 89);
             this.EdadBox.Name = "EdadBox";
-            this.EdadBox.Size = new System.Drawing.Size(250, 20);
+            this.EdadBox.Size = new System.Drawing.Size(235, 20);
             this.EdadBox.TabIndex = 3;
             // 
             // TelBox
             // 
             this.TelBox.Location = new System.Drawing.Point(491, 40);
             this.TelBox.Name = "TelBox";
-            this.TelBox.Size = new System.Drawing.Size(250, 20);
+            this.TelBox.Size = new System.Drawing.Size(235, 20);
             this.TelBox.TabIndex = 4;
             // 
             // label1
@@ -111,7 +112,7 @@ namespace Program.Presentacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 92);
+            this.label4.Location = new System.Drawing.Point(73, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 8;
@@ -121,17 +122,27 @@ namespace Program.Presentacion
             // UserDataView
             // 
             this.UserDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UserDataView.Location = new System.Drawing.Point(76, 188);
+            this.UserDataView.Location = new System.Drawing.Point(87, 191);
             this.UserDataView.Name = "UserDataView";
-            this.UserDataView.Size = new System.Drawing.Size(665, 210);
+            this.UserDataView.Size = new System.Drawing.Size(639, 203);
             this.UserDataView.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(164, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Tarea 01 -Programación N-capas";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightYellow;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.UserDataView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -143,7 +154,7 @@ namespace Program.Presentacion
             this.Controls.Add(this.NombreBox);
             this.Controls.Add(this.Insert);
             this.Name = "Form1";
-            this.Text = "PersonForm";
+            this.Text = "Ingresar Datos";
             ((System.ComponentModel.ISupportInitialize)(this.UserDataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,6 +173,7 @@ namespace Program.Presentacion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView UserDataView;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -74,7 +74,7 @@ namespace Program.Data
                 con.Open();
 
                 if (cmd.ExecuteNonQuery() == 1)
-                    res = "Usuario Insertado";
+                    res = "Insertado con Exito";
                 else
                     res = "Usuario no Insertado";
 
