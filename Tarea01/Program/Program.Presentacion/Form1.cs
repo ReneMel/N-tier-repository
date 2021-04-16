@@ -19,18 +19,19 @@ namespace Program.Presentacion
             InitializeComponent();
             refreshdata();
         }
-
+        //proceso para refrescar data
         private void refreshdata() {
             BindingSource bs = new BindingSource();
             Npersona np = new Npersona();
 
             bs.DataSource = np.Listar();
+            //evitar que sea editable el GridView
             UserDataView.ReadOnly = true;
             UserDataView.DataSource = bs;
         }
 
 
-
+        //refrescar data dentro del gridview
         private void PersonForm_Load (Object sender, EventArgs e) {
             refreshdata();
         }

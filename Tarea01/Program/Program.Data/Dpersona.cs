@@ -19,6 +19,7 @@ namespace Program.Data
             try
             {
                 con = Conexion.getInstancia().CrearConexion();
+                //llamando stored procedure listar();
                 SqlCommand cmd = new SqlCommand("listar", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
@@ -68,6 +69,7 @@ namespace Program.Data
             try
             {
                 con = Conexion.getInstancia().CrearConexion();
+                //llamando stored procedure insertar_Persona();
                 SqlCommand cmd = new SqlCommand("insertar_persona", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddRange(parameters);

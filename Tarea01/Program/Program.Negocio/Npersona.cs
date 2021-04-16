@@ -19,7 +19,7 @@ namespace Program.Negocio
         }
 
         public string insertarData(string nombre, string apellido, int edad, string tel) {
-
+            //creación  de objeto persona
             Persona p = new Persona() {
                 nombre = nombre,
                 apellido = apellido,
