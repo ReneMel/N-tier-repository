@@ -16,13 +16,15 @@ namespace Program.Data
         private bool Seguridad;
         private static Conexion Con = null;
 
+
+        //información para conectarse
         private Conexion()
         {
             this.Base = "NtiersTarea1";
             this.Servidor = "DESKTOP-MC2DUFI";
             this.Usuario = "sa";
             this.Clave = "GINRO2021";
-            this.Seguridad = true;
+            this.Seguridad = true; //windows security
         }
 
         public SqlConnection CrearConexion()
