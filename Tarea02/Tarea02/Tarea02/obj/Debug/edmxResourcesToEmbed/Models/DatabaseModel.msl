@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ncapasTarea2ModelStoreContainer" CdmEntityContainer="ncapasTarea2Entities">
+    <EntitySetMapping Name="acceso_premier">
+      <EntityTypeMapping TypeName="ncapasTarea2Model.acceso_premier">
+        <MappingFragment StoreEntitySet="acceso_premier">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pelicula_id" ColumnName="pelicula_id" />
+          <ScalarProperty Name="persona_id" ColumnName="persona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="peliculas">
+      <EntityTypeMapping TypeName="ncapasTarea2Model.pelicula">
+        <MappingFragment StoreEntitySet="pelicula">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre_pelicula" ColumnName="nombre_pelicula" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="estudio" ColumnName="estudio" />
+          <ScalarProperty Name="director" ColumnName="director" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personas">
+      <EntityTypeMapping TypeName="ncapasTarea2Model.persona">
+        <MappingFragment StoreEntitySet="persona">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rols">
+      <EntityTypeMapping TypeName="ncapasTarea2Model.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descrip" ColumnName="descrip" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

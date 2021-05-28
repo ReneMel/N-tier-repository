@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ncapasTarea2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="acceso_premier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pelicula_id" Type="Int32" Nullable="false" />
+    <Property Name="persona_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="pelicula" Relationship="Self.FK__acceso_pr__pelic__2B3F6F97" FromRole="acceso_premier" ToRole="pelicula" />
+    <NavigationProperty Name="persona" Relationship="Self.FK__acceso_pr__perso__2C3393D0" FromRole="acceso_premier" ToRole="persona" />
+  </EntityType>
+  <EntityType Name="pelicula">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_pelicula" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="duracion" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="category" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estudio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="director" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="genero" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="acceso_premier" Relationship="Self.FK__acceso_pr__pelic__2B3F6F97" FromRole="pelicula" ToRole="acceso_premier" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="edad" Type="Int32" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rol_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="acceso_premier" Relationship="Self.FK__acceso_pr__perso__2C3393D0" FromRole="persona" ToRole="acceso_premier" />
+    <NavigationProperty Name="rol" Relationship="Self.FK__persona__rol_id__286302EC" FromRole="persona" ToRole="rol" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descrip" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="personas" Relationship="Self.FK__persona__rol_id__286302EC" FromRole="rol" ToRole="persona" />
+  </EntityType>
+  <Association Name="FK__acceso_pr__pelic__2B3F6F97">
+    <End Role="pelicula" Type="Self.pelicula" Multiplicity="1" />
+    <End Role="acceso_premier" Type="Self.acceso_premier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pelicula">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="acceso_premier">
+        <PropertyRef Name="pelicula_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__acceso_pr__perso__2C3393D0">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="acceso_premier" Type="Self.acceso_premier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="acceso_premier">
+        <PropertyRef Name="persona_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__persona__rol_id__286302EC">
+    <End Role="rol" Type="Self.rol" Multiplicity="1" />
+    <End Role="persona" Type="Self.persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="persona">
+        <PropertyRef Name="rol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ncapasTarea2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="acceso_premier" EntityType="Self.acceso_premier" />
+    <EntitySet Name="peliculas" EntityType="Self.pelicula" />
+    <EntitySet Name="personas" EntityType="Self.persona" />
+    <EntitySet Name="rols" EntityType="Self.rol" />
+    <AssociationSet Name="FK__acceso_pr__pelic__2B3F6F97" Association="Self.FK__acceso_pr__pelic__2B3F6F97">
+      <End Role="pelicula" EntitySet="peliculas" />
+      <End Role="acceso_premier" EntitySet="acceso_premier" />
+    </AssociationSet>
+    <AssociationSet Name="FK__acceso_pr__perso__2C3393D0" Association="Self.FK__acceso_pr__perso__2C3393D0">
+      <End Role="persona" EntitySet="personas" />
+      <End Role="acceso_premier" EntitySet="acceso_premier" />
+    </AssociationSet>
+    <AssociationSet Name="FK__persona__rol_id__286302EC" Association="Self.FK__persona__rol_id__286302EC">
+      <End Role="rol" EntitySet="rols" />
+      <End Role="persona" EntitySet="personas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

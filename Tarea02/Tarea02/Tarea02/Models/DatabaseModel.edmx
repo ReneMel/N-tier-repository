@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ncapasTarea2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="acceso_premier">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pelicula_id" Type="int" Nullable="false" />
+          <Property Name="persona_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pelicula">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_pelicula" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="duracion" Type="time" Precision="7" Nullable="false" />
+          <Property Name="category" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="estudio" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="director" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="genero" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="persona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="edad" Type="int" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="rol_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="descrip" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__acceso_pr__pelic__2B3F6F97">
+          <End Role="pelicula" Type="Self.pelicula" Multiplicity="1" />
+          <End Role="acceso_premier" Type="Self.acceso_premier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pelicula">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="acceso_premier">
+              <PropertyRef Name="pelicula_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__acceso_pr__perso__2C3393D0">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="acceso_premier" Type="Self.acceso_premier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="acceso_premier">
+              <PropertyRef Name="persona_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__persona__rol_id__286302EC">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="rol_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ncapasTarea2ModelStoreContainer">
+          <EntitySet Name="acceso_premier" EntityType="Self.acceso_premier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pelicula" EntityType="Self.pelicula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__acceso_pr__pelic__2B3F6F97" Association="Self.FK__acceso_pr__pelic__2B3F6F97">
+            <End Role="pelicula" EntitySet="pelicula" />
+            <End Role="acceso_premier" EntitySet="acceso_premier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__acceso_pr__perso__2C3393D0" Association="Self.FK__acceso_pr__perso__2C3393D0">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="acceso_premier" EntitySet="acceso_premier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__persona__rol_id__286302EC" Association="Self.FK__persona__rol_id__286302EC">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ncapasTarea2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="acceso_premier">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pelicula_id" Type="Int32" Nullable="false" />
+          <Property Name="persona_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="pelicula" Relationship="Self.FK__acceso_pr__pelic__2B3F6F97" FromRole="acceso_premier" ToRole="pelicula" />
+          <NavigationProperty Name="persona" Relationship="Self.FK__acceso_pr__perso__2C3393D0" FromRole="acceso_premier" ToRole="persona" />
+        </EntityType>
+        <EntityType Name="pelicula">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_pelicula" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="duracion" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="category" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estudio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="director" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="genero" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="acceso_premier" Relationship="Self.FK__acceso_pr__pelic__2B3F6F97" FromRole="pelicula" ToRole="acceso_premier" />
+        </EntityType>
+        <EntityType Name="persona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="edad" Type="Int32" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rol_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="acceso_premier" Relationship="Self.FK__acceso_pr__perso__2C3393D0" FromRole="persona" ToRole="acceso_premier" />
+          <NavigationProperty Name="rol" Relationship="Self.FK__persona__rol_id__286302EC" FromRole="persona" ToRole="rol" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descrip" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="personas" Relationship="Self.FK__persona__rol_id__286302EC" FromRole="rol" ToRole="persona" />
+        </EntityType>
+        <Association Name="FK__acceso_pr__pelic__2B3F6F97">
+          <End Role="pelicula" Type="Self.pelicula" Multiplicity="1" />
+          <End Role="acceso_premier" Type="Self.acceso_premier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pelicula">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="acceso_premier">
+              <PropertyRef Name="pelicula_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__acceso_pr__perso__2C3393D0">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="acceso_premier" Type="Self.acceso_premier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="acceso_premier">
+              <PropertyRef Name="persona_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__persona__rol_id__286302EC">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="rol_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ncapasTarea2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="acceso_premier" EntityType="Self.acceso_premier" />
+          <EntitySet Name="peliculas" EntityType="Self.pelicula" />
+          <EntitySet Name="personas" EntityType="Self.persona" />
+          <EntitySet Name="rols" EntityType="Self.rol" />
+          <AssociationSet Name="FK__acceso_pr__pelic__2B3F6F97" Association="Self.FK__acceso_pr__pelic__2B3F6F97">
+            <End Role="pelicula" EntitySet="peliculas" />
+            <End Role="acceso_premier" EntitySet="acceso_premier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__acceso_pr__perso__2C3393D0" Association="Self.FK__acceso_pr__perso__2C3393D0">
+            <End Role="persona" EntitySet="personas" />
+            <End Role="acceso_premier" EntitySet="acceso_premier" />
+          </AssociationSet>
+          <AssociationSet Name="FK__persona__rol_id__286302EC" Association="Self.FK__persona__rol_id__286302EC">
+            <End Role="rol" EntitySet="rols" />
+            <End Role="persona" EntitySet="personas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ncapasTarea2ModelStoreContainer" CdmEntityContainer="ncapasTarea2Entities">
+          <EntitySetMapping Name="acceso_premier">
+            <EntityTypeMapping TypeName="ncapasTarea2Model.acceso_premier">
+              <MappingFragment StoreEntitySet="acceso_premier">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pelicula_id" ColumnName="pelicula_id" />
+                <ScalarProperty Name="persona_id" ColumnName="persona_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="peliculas">
+            <EntityTypeMapping TypeName="ncapasTarea2Model.pelicula">
+              <MappingFragment StoreEntitySet="pelicula">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre_pelicula" ColumnName="nombre_pelicula" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="duracion" ColumnName="duracion" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="estudio" ColumnName="estudio" />
+                <ScalarProperty Name="director" ColumnName="director" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personas">
+            <EntityTypeMapping TypeName="ncapasTarea2Model.persona">
+              <MappingFragment StoreEntitySet="persona">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rols">
+            <EntityTypeMapping TypeName="ncapasTarea2Model.rol">
+              <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descrip" ColumnName="descrip" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Cine Ncapas";
+}
+
+<div class="jumbotron container"style="background-color:ghostwhite" >
+    <div class="row">
+        <div class="col-sm">
+        <h1>Cine Ncapas</h1>
+        <p class="lead">Sistema para acceso a cine premiere  </p>
+        </div>
+        <div class=" col-sm">
+            <img src="~/Content/imgs/imgcinema.jpg" height="200" width="200" />
+        </div>
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Usuario", "Index", "personas")</h2>
+        <p>
+          Mantenimiento de Personas
+        </p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Roles", "Index", "rols")</h2>
+        <p>Mantenimiento de  roles</p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Peliculas", "Index", "peliculas")</h2>
+        <p>Mantenimiento de Peliculas.</p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Acceso Premiere", "Index", "acceso_premier")</h2>
+        <p>Mantenimiento de Acceso Premiere</p>
+        
+    </div>  
+</div>
